@@ -26,6 +26,7 @@ Compensation amount;
 Original Amount;
 Ultimate creditor;
 Number of transactions;
+Number of cheques;
 Debit;
 Credit;
 Currency
@@ -35,8 +36,8 @@ Currency
 ACC_BOOKING_DATE = 0
 ACC_BENEFICIARY = 3
 ACC_PAYMENT_DETAILS = 4
-ACC_DEBIT = 14
-ACC_CREDIT = 15
+ACC_DEBIT = 15
+ACC_CREDIT = 16
 
 # Credit card CSV header
 CC_HEADER = """
@@ -119,7 +120,7 @@ in_file_b = open(in_filename, "rb").read()
 in_file_enc = chardet.detect(in_file_b)
 
 # Attempt decoding
-in_file_s = in_file_b.decode(in_file_enc["encoding"])
+in_file_s = in_file_b.decode(in_file_enc["encoding"]).strip()
 
 # Set well-formed flag
 well_formed = False
